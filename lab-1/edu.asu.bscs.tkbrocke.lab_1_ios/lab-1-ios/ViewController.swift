@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  lab_1_ios
+//  lab-1-ios
 //
-//  Created by tkbrocke on 1/15/16.
-//  Copyright (c) 2016 tkbrocke. All rights reserved.
+//  Created by Tyler Brockett on 1/15/16.
+//  Copyright © 2016 Tyler Brockett. All rights reserved.
 //
 
 import UIKit

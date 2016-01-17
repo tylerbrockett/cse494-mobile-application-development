@@ -1,13 +1,13 @@
 //
 //  lab_1_iosTests.swift
-//  lab_1_iosTests
+//  lab-1-iosTests
 //
-//  Created by tkbrocke on 1/15/16.
-//  Copyright (c) 2016 tkbrocke. All rights reserved.
+//  Created by Tyler Brockett on 1/15/16.
+//  Copyright © 2016 Tyler Brockett. All rights reserved.
 //
 
-import UIKit
 import XCTest
+@testable import lab_1_ios
 
 class lab_1_iosTests: XCTestCase {
     
@@ -23,12 +23,12 @@ class lab_1_iosTests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        // Use XCTAssert and related functions to verify your tests produce the correct results.
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measureBlock() {
+        self.measureBlock {
             // Put the code you want to measure the time of here.
         }
     }
