@@ -9,17 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var inputBox: UITextView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var yearLabel: UILabel!
+    @IBOutlet weak var ratedLabel: UILabel!
+    @IBOutlet weak var releasedLabel: UILabel!
+    @IBOutlet weak var runtimeLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var actorsLabel: UILabel!
+    @IBOutlet weak var plotLabel: UILabel!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    
+    @IBAction func submit() {
+        let jsonInput: String = inputBox.text
+        let movie: MovieDescription = MovieDescription(json: jsonInput)
+        
+        titleLabel.text = movie.getTitle()
+        yearLabel.text = movie.getYear()
+        ratedLabel.text = movie.getRated()
+        releasedLabel.text = movie.getReleased()
+        runtimeLabel.text = movie.getRuntime()
+        genreLabel.text = movie.getGenre()
+        actorsLabel.text = movie.getActors()
+        plotLabel.text = movie.getPlot()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
-
