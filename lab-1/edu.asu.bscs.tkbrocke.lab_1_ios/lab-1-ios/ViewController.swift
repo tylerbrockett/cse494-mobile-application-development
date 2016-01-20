@@ -19,7 +19,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var actorsLabel: UILabel!
     @IBOutlet weak var plotLabel: UILabel!
-
     
     @IBAction func submit() {
         let jsonInput: String = inputBox.text
