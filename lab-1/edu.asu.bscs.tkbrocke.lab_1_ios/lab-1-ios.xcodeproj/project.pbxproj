@@ -12,8 +12,6 @@
 		2F0ACFAA1C49FA150042B8EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ACFA81C49FA150042B8EC /* Main.storyboard */; };
 		2F0ACFAC1C49FA150042B8EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ACFAB1C49FA150042B8EC /* Assets.xcassets */; };
 		2F0ACFAF1C49FA160042B8EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2F0ACFAD1C49FA160042B8EC /* LaunchScreen.storyboard */; };
-		2F0ACFBA1C49FA170042B8EC /* lab_1_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACFB91C49FA170042B8EC /* lab_1_iosTests.swift */; };
-		2F0ACFC51C49FA170042B8EC /* lab_1_iosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F0ACFC41C49FA170042B8EC /* lab_1_iosUITests.swift */; };
 		2FF632661C4B17E9005BBE8C /* MovieDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF632651C4B17E9005BBE8C /* MovieDescription.swift */; };
 /* End PBXBuildFile section */
 
@@ -43,11 +41,7 @@
 		2F0ACFAE1C49FA160042B8EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2F0ACFB01C49FA160042B8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F0ACFB51C49FA170042B8EC /* lab-1-iosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lab-1-iosTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F0ACFB91C49FA170042B8EC /* lab_1_iosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_1_iosTests.swift; sourceTree = "<group>"; };
-		2F0ACFBB1C49FA170042B8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2F0ACFC01C49FA170042B8EC /* lab-1-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "lab-1-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F0ACFC41C49FA170042B8EC /* lab_1_iosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lab_1_iosUITests.swift; sourceTree = "<group>"; };
-		2F0ACFC61C49FA170042B8EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF632651C4B17E9005BBE8C /* MovieDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,8 +74,6 @@
 			isa = PBXGroup;
 			children = (
 				2F0ACFA31C49FA140042B8EC /* lab-1-ios */,
-				2F0ACFB81C49FA170042B8EC /* lab-1-iosTests */,
-				2F0ACFC31C49FA170042B8EC /* lab-1-iosUITests */,
 				2F0ACFA21C49FA140042B8EC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -108,24 +100,6 @@
 				2FF632651C4B17E9005BBE8C /* MovieDescription.swift */,
 			);
 			path = "lab-1-ios";
-			sourceTree = "<group>";
-		};
-		2F0ACFB81C49FA170042B8EC /* lab-1-iosTests */ = {
-			isa = PBXGroup;
-			children = (
-				2F0ACFB91C49FA170042B8EC /* lab_1_iosTests.swift */,
-				2F0ACFBB1C49FA170042B8EC /* Info.plist */,
-			);
-			path = "lab-1-iosTests";
-			sourceTree = "<group>";
-		};
-		2F0ACFC31C49FA170042B8EC /* lab-1-iosUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2F0ACFC41C49FA170042B8EC /* lab_1_iosUITests.swift */,
-				2F0ACFC61C49FA170042B8EC /* Info.plist */,
-			);
-			path = "lab-1-iosUITests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0ACFBA1C49FA170042B8EC /* lab_1_iosTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F0ACFC51C49FA170042B8EC /* lab_1_iosUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
