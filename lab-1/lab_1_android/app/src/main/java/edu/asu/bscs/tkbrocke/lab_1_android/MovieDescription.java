@@ -1,5 +1,5 @@
 /*
- * @author Tyler Brockett
+ * @author Tyler Brockett			mailto:tylerbrockett@gmail.com
  * @project CSE 494 Lab 1 - Android
  * @version January 2016
  *
