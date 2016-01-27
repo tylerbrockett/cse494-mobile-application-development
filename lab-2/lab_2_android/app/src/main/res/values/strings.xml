@@ -1,9 +1,8 @@
 <resources>
     <string name="app_name">Lab 2 Android</string>
-    <string name="alert_message">Press the button below to end the activity.</string>
-    <string name="alert_title">New Activity!</string>
-    <string name="alert_button">Finish</string>
+    <string name="alert_message">Hello Android Developer!</string>
+    <string name="alert_title">New Activity</string>
+    <string name="alert_button">OK</string>
     <string name="main_button">New Activity</string>
     <string name="main_text">Press the button to start a new activity!</string>
-
 </resources>
