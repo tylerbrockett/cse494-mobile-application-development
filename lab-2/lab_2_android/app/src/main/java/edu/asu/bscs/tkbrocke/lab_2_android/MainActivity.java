@@ -16,51 +16,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.w(this.getClass().getSimpleName(), "MainActivity .onCreate()");
-
         mainButton = (Button)findViewById(R.id.main_button);
         mainButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent("edu.asu.bscs.tkbrocke.lab_2_android.AlertActivity");
+                Log.w("MainActivity", "Starting Dialog Activity");
+                Intent intent = new Intent(MainActivity.this, AlertActivity.class);
                 startActivity(intent);
             }
         });
-    }
-
-    @Override
-    protected void onRestart(){
-        super.onRestart();
-        Log.w(this.getClass().getSimpleName(), "Main .onRestart()");
-    }
-
-    @Override
-    protected void onStart(){
-        super.onStart();
-        Log.w(this.getClass().getSimpleName(), "Main .onStart()");
-    }
-
-    @Override
-    protected void onResume(){
-        super.onResume();
-        Log.w(this.getClass().getSimpleName(), "Main .onResume()");
-    }
-
-    @Override
-    protected void onPause(){
-        super.onPause();
-        Log.w(this.getClass().getSimpleName(), "Main .onPause()");
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
-        Log.w(this.getClass().getSimpleName(), "Main .onStop()");
-    }
-
-    @Override
-    protected void onDestroy(){
-        super.onDestroy();
-        Log.w(this.getClass().getSimpleName(), "Main .onDestroy()");
     }
 }

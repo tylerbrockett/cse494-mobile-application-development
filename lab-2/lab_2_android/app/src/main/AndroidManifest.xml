@@ -16,7 +16,6 @@
             </intent-filter>
         </activity>
         <activity android:name=".AlertActivity"
-            android:label=""
             android:theme="@style/Theme.AppCompat.Dialog">
             <intent-filter>
                 <action android:name="edu.asu.bscs.tkbrocke.lab_2_android.AlertActivity" />
