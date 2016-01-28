@@ -1,7 +1,7 @@
 /*
- * @author Tyler Brockett
+ * @author Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @project Lab 2 - Android
- * @version January 2016
+ * @version January 27, 2016
  *
  * The MIT License (MIT)
  *
