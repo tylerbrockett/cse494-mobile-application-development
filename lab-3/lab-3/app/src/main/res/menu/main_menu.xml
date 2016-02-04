@@ -6,5 +6,9 @@
         android:icon="@drawable/ic_action_new"
         android:title="@string/add_new"
         app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/auto_import"
+        android:title="@string/auto_import"
+        app:showAsAction="never" />
     
 </menu>

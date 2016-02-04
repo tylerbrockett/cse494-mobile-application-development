@@ -79,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent newEntry = new Intent(this, NewEntryActivity.class);
                 startActivity(newEntry);
                 return true;
+            case R.id.auto_import:
+                Intent autoImport = new Intent(this, AutoImportActivity.class);
+                startActivity(autoImport);
             default:
                 return super.onOptionsItemSelected(item);
         }
