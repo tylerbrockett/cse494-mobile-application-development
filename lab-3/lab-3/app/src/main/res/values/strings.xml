@@ -1,3 +1,22 @@
 <resources>
-    <string name="app_name">Lab 3</string>
+    <string name="app_name">Movie Database</string>
+    <string name="activity_title">Entries</string>
+    <string name="add_new">New</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_movie">New Movie</string>
+
+    <string name="json">Json</string>
+    <string name="title">Title</string>
+    <string name="year">Year</string>
+    <string name="rated">Rated</string>
+    <string name="released">Released</string>
+    <string name="runtime">Runtime</string>
+    <string name="genre">Genre</string>
+    <string name="actors">Actors</string>
+    <string name="plot">Plot</string>
+
+    <string name="or">Or&#8230;</string>
+    <string name="empty">Empty</string>
+
 </resources>
