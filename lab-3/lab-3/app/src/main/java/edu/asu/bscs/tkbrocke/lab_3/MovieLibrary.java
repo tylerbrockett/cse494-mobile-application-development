@@ -56,29 +56,6 @@ public class MovieLibrary {
         return library.get(index);
     }
 
-    public String get(int parentIndex, int childIndex){
-        switch(childIndex){
-            case 0:
-                return library.get(parentIndex).getTitle();
-            case 1:
-                return library.get(parentIndex).getYear();
-            case 2:
-                return library.get(parentIndex).getRated();
-            case 3:
-                return library.get(parentIndex).getReleased();
-            case 4:
-                return library.get(parentIndex).getRuntime();
-            case 5:
-                return library.get(parentIndex).getGenre();
-            case 6:
-                return library.get(parentIndex).getActors();
-            case 7:
-                return library.get(parentIndex).getPlot();
-            default:
-                return "";
-        }
-    }
-
     public void clearAll(){
         while (getSize() > 0){
             library.remove(0);
