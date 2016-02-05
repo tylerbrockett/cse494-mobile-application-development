@@ -10,7 +10,7 @@
     android:layout_margin="20dp"
     android:gravity="center"
     android:orientation="horizontal"
-    tools:context="edu.asu.bscs.tkbrocke.lab_3.AutoImportActivity">
+    tools:context=".AutoPopulateActivity">
 
     <ProgressBar
         android:layout_width="50dp"
@@ -23,5 +23,5 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="25sp"
-        android:text="@string/importing" />
+        android:text="@string/populating" />
 </LinearLayout>

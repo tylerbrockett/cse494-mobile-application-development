@@ -79,9 +79,14 @@ public class MainActivity extends AppCompatActivity {
                 Intent newEntry = new Intent(this, NewEntryActivity.class);
                 startActivity(newEntry);
                 return true;
-            case R.id.auto_import:
-                Intent autoImport = new Intent(this, AutoImportActivity.class);
-                startActivity(autoImport);
+            case R.id.auto_populate:
+                Intent autoPopulate = new Intent(this, AutoPopulateActivity.class);
+                startActivity(autoPopulate);
+                return true;
+            case R.id.clear_all:
+                library.clearAll();
+                adapter.notifyDataSetChanged();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }

@@ -19,7 +19,8 @@
     <string name="or">Or&#8230;</string>
     <string name="empty">Empty</string>
 
-    <string name="importing">Importing&#8230;</string>
-    <string name="auto_import">Auto Import</string>
+    <string name="populating">Populating&#8230;</string>
+    <string name="auto_populate">Auto Populate</string>
+    <string name="clear_all">Clear All</string>
 
 </resources>

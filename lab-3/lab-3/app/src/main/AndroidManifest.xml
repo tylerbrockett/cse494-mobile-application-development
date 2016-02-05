@@ -17,10 +17,11 @@
         </activity>
         <activity
             android:name=".NewEntryActivity"
-            android:title="@string/new_movie" />
+            android:label="@string/new_movie" />
 
-        <activity android:name=".AutoImportActivity"
-            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".AutoPopulateActivity"
+            android:theme="@style/Theme.AppCompat.Dialog"
+            android:label="@null"/>
 
     </application>
 

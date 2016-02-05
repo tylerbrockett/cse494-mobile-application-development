@@ -79,6 +79,12 @@ public class MovieLibrary {
         }
     }
 
+    public void clearAll(){
+        while (getSize() > 0){
+            library.remove(0);
+        }
+    }
+
     public int getSize(){
         return library.size();
     }

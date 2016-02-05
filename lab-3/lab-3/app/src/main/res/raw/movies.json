@@ -1,7 +1,7 @@
 {
   "Movies":
-  {
-    "Interstellar": {
+  [
+    {
       "Title": "Interstellar",
       "Year": "2014",
       "Rated": "PG-13",
@@ -23,7 +23,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode I - The Phantom Menace": {
+    {
       "Title": "Star Wars: Episode I - The Phantom Menace",
       "Year": "1999",
       "Rated": "PG",
@@ -45,7 +45,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode II - Attack of the Clones": {
+    {
       "Title": "Star Wars: Episode II - Attack of the Clones",
       "Year": "2002",
       "Rated": "PG",
@@ -67,7 +67,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode III - Revenge of the Sith": {
+    {
       "Title": "Star Wars: Episode III - Revenge of the Sith",
       "Year": "2005",
       "Rated": "PG-13",
@@ -89,7 +89,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode IV - A New Hope": {
+    {
       "Title": "Star Wars: Episode IV - A New Hope",
       "Year": "1977",
       "Rated": "PG",
@@ -111,7 +111,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode V - The Empire Strikes Back": {
+    {
       "Title": "Star Wars: Episode V - The Empire Strikes Back",
       "Year": "1980",
       "Rated": "PG",
@@ -133,7 +133,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode VI - Return of the Jedi": {
+    {
       "Title": "Star Wars: Episode VI - Return of the Jedi",
       "Year": "1983",
       "Rated": "PG",
@@ -155,7 +155,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Star Wars: Episode VII - The Force Awakens": {
+    {
       "Title": "Star Wars: Episode VII - The Force Awakens",
       "Year": "2015",
       "Rated": "PG-13",
@@ -177,7 +177,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Batman Begins": {
+    {
       "Title": "Batman Begins",
       "Year": "2005",
       "Rated": "PG-13",
@@ -199,7 +199,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "The Dark Knight": {
+    {
       "Title": "The Dark Knight",
       "Year": "2008",
       "Rated": "PG-13",
@@ -221,7 +221,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "The Dark Knight Rises": {
+    {
       "Title": "The Dark Knight Rises",
       "Year": "2012",
       "Rated": "PG-13",
@@ -243,7 +243,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Inception": {
+    {
       "Title": "Inception",
       "Year": "2010",
       "Rated": "PG-13",
@@ -265,7 +265,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Despicable Me": {
+    {
       "Title": "Despicable Me",
       "Year": "2010",
       "Rated": "PG",
@@ -287,7 +287,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Despicable Me 2": {
+    {
       "Title": "Despicable Me 2",
       "Year": "2013",
       "Rated": "PG",
@@ -309,7 +309,7 @@
       "Type": "movie",
       "Response": "True"
     },
-    "Minions": {
+    {
       "Title": "Minions",
       "Year": "2015",
       "Rated": "PG",
@@ -331,5 +331,5 @@
       "Type": "movie",
       "Response": "True"
     }
-  }
+  ]
 }
