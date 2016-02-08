@@ -34,6 +34,7 @@ import org.json.JSONException;
 
 public class MovieDescription implements Comparable<MovieDescription>{
 
+    private String json;
     private String title;
     private String year;
     private String rated;
@@ -44,6 +45,41 @@ public class MovieDescription implements Comparable<MovieDescription>{
     private String plot;
 
     public MovieDescription(String json){
+        this.json = json;
+        parseJSON(json);
+    }
+
+    public MovieDescription(String title,       String year,    String rated,
+                            String released,    String runtime, String genre,
+                            String actors,      String plot)
+    {
+        this.title = title;
+        this.year = year;
+        this.rated = rated;
+        this.released = released;
+        this.runtime = runtime;
+        this.genre = genre;
+        this.actors = actors;
+        this.plot = plot;
+        generateJSON();
+    }
+
+    public String generateJSON(){
+        this.json =
+                "{" +
+                        "\"Title\":\"" + this.title + "\"," +
+                        "\"Year\":\"" + this.year + "\"," +
+                        "\"Rated\":\"" + this.rated + "\"," +
+                        "\"Released\":\"" + this.released + "\"," +
+                        "\"Runtime\":\"" + this.runtime + "\"," +
+                        "\"Genre\":\"" + this.genre + "\"," +
+                        "\"Actors\":\"" + this.actors + "\"," +
+                        "\"Plot\":\"" + this.plot + "\"" +
+                "}";
+        return this.json;
+    }
+
+    public void parseJSON(String json){
         try {
             JSONObject jo = new JSONObject(json);
             this.title = jo.getString("Title");
@@ -67,18 +103,8 @@ public class MovieDescription implements Comparable<MovieDescription>{
         }
     }
 
-    public MovieDescription(String title,       String year,    String rated,
-                            String released,    String runtime, String genre,
-                            String actors,      String plot)
-    {
-        this.title = title;
-        this.year = year;
-        this.rated = rated;
-        this.released = released;
-        this.runtime = runtime;
-        this.genre = genre;
-        this.actors = actors;
-        this.plot = plot;
+    public String getJSON(){
+        return this.json;
     }
 
     public String getTitle(){
@@ -111,6 +137,43 @@ public class MovieDescription implements Comparable<MovieDescription>{
 
     public String getPlot(){
         return this.plot;
+    }
+
+    public void setJSON(String json){
+        this.json = json;
+        parseJSON(json);
+    }
+
+    public void setTitle(String title){
+        this.title = title;
+    }
+
+    public void setYear(String year){
+        this.year = year;
+    }
+
+    public void setRated(String rated){
+        this.rated = rated;
+    }
+
+    public void setReleased(String released){
+        this.released = released;
+    }
+
+    public void setRuntime(String runtime){
+        this.runtime = runtime;
+    }
+
+    public void setGenre(String genre){
+        this.genre = genre;
+    }
+
+    public void setActors(String actors){
+        this.actors = actors;
+    }
+
+    public void setPlot(String plot){
+        this.plot = plot;
     }
 
     @Override

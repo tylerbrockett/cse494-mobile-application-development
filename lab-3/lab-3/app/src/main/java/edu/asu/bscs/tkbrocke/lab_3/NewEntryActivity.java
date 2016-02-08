@@ -43,7 +43,7 @@ public class NewEntryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_entry);
+        setContentView(R.layout.activity_new_movie);
         json = (EditText) findViewById(R.id.json);
         title = (EditText) findViewById(R.id.title);
         year = (EditText) findViewById(R.id.year);
@@ -58,7 +58,7 @@ public class NewEntryActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.new_entry_menu, menu);
+        inflater.inflate(R.menu.movie_details_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

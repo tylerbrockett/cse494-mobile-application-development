@@ -41,11 +41,25 @@ public class MovieLibrary {
 
     public void add(MovieDescription movie){
         library.add(movie);
+        sort();
+    }
+
+    public void sort(){
         Collections.sort(library);
     }
 
     public void remove(int index){
         library.remove(index);
+    }
+
+    public MovieDescription search(String title){
+        for (int i = 0; i < getSize(); i++){
+            MovieDescription movie = library.get(i);
+            if (movie.getTitle().equalsIgnoreCase(title)){
+                return movie;
+            }
+        }
+        return null;
     }
 
     public ArrayList<MovieDescription> getLibrary(){

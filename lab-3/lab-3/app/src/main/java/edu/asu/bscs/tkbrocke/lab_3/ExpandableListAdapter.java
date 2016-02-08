@@ -29,6 +29,7 @@
 package edu.asu.bscs.tkbrocke.lab_3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -124,37 +125,49 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
+        final int gPosition = groupPosition;
+        final MainActivity context = this.parent;
+        final String title = ((MovieDescription)getGroup(groupPosition)).getTitle();
+
         if (convertView == null){
             convertView = ((LayoutInflater)this.parent.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.list_group, null);
         }
 
-        ImageView imgView = (ImageView)convertView.findViewById(R.id.group_image);
-        TextView groupTitle = (TextView) convertView.findViewById(R.id.group_title);
+        ImageView moviePoster = (ImageView)convertView.findViewById(R.id.movie_poster);
+        TextView movieTitle = (TextView) convertView.findViewById(R.id.movie_title);
+        ImageView deleteMovie = (ImageView)convertView.findViewById(R.id.delete_movie);
+        ImageView editMovie = (ImageView)convertView.findViewById(R.id.edit_movie);
 
-        if (isExpanded){
-            imgView.setImageDrawable(parent.getResources().getDrawable(R.drawable.reel_white));
-            convertView.setBackgroundColor(parent.getResources().getColor(R.color.expanded_color));
-            groupTitle.setTextColor(parent.getResources().getColor(R.color.white));
-        }
-        else{
-            imgView.setImageDrawable(parent.getResources().getDrawable(R.drawable.reel));
-            convertView.setBackgroundColor(parent.getResources().getColor(R.color.group_background));
-            groupTitle.setTextColor(parent.getResources().getColor(R.color.default_text_color));
-        }
+        editMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editMovie = new Intent(context, EditMovieActivity.class);
+                editMovie.putExtra("movie_title", title);
+                context.startActivity(editMovie);
+            }
+        });
 
-        String headerTitle = ((MovieDescription)getGroup(groupPosition)).getTitle();
-
-        groupTitle.setText(headerTitle);
-        ImageView img = (ImageView)convertView.findViewById(R.id.delete_image);
-
-        final int gPosition = groupPosition;
-        img.setOnClickListener(new View.OnClickListener() {
+        deleteMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 library.remove(gPosition);
                 notifyDataSetChanged();
             }
         });
+
+        movieTitle.setText(title);
+
+        // Change reel color to match text
+        if (isExpanded){
+            moviePoster.setImageDrawable(parent.getResources().getDrawable(R.drawable.reel_white));
+            convertView.setBackgroundColor(parent.getResources().getColor(R.color.expanded_color));
+            movieTitle.setTextColor(parent.getResources().getColor(R.color.white));
+        }
+        else{
+            moviePoster.setImageDrawable(parent.getResources().getDrawable(R.drawable.reel));
+            convertView.setBackgroundColor(parent.getResources().getColor(R.color.group_background));
+            movieTitle.setTextColor(parent.getResources().getColor(R.color.default_text_color));
+        }
         return convertView;
     }
 

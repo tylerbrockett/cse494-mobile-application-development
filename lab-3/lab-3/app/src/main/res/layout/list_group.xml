@@ -9,7 +9,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/group_image"
+        android:id="@+id/movie_poster"
         android:src="@drawable/reel"
         android:layout_width="30dp"
         android:layout_height="30dp"
@@ -17,7 +17,7 @@
         android:layout_marginRight="20dp"/>
 
     <TextView
-        android:id="@+id/group_title"
+        android:id="@+id/movie_title"
         android:layout_width="0dp"
         android:layout_weight="1"
         android:layout_height="wrap_content"
@@ -26,9 +26,16 @@
         android:textColor="@color/default_text_color"/>
 
     <ImageView
-        android:id="@+id/delete_image"
+        android:id="@+id/edit_movie"
+        android:src="@drawable/edit"
+        android:layout_marginLeft="10dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
+
+    <ImageView
+        android:id="@+id/delete_movie"
         android:src="@drawable/trash"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="10dp"
         android:layout_width="30dp"
         android:layout_height="30dp" />
 

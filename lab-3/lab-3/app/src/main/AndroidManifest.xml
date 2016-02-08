@@ -18,11 +18,11 @@
         <activity
             android:name=".NewEntryActivity"
             android:label="@string/new_movie" />
-
-        <activity android:name=".AutoPopulateActivity"
-            android:theme="@style/Theme.AppCompat.Dialog"
-            android:label="@null"/>
-
+        <activity
+            android:name=".AutoPopulateActivity"
+            android:label="@null"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity android:name=".EditMovieActivity"></activity>
     </application>
 
 </manifest>
