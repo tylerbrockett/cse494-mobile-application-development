@@ -30,7 +30,6 @@ package edu.asu.bscs.tkbrocke.lab_3;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -77,10 +76,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                              boolean isLastChild, View convertView, ViewGroup parent) {
         if (convertView == null){
             convertView = ((LayoutInflater)this.parent.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.list_item, null);
-        }
-        if (childPosition != 0){
-            Log.e("ExpandableListAdapter", "Error: getChildView");
-            return null;
         }
 
         TextView year = (TextView)convertView.findViewById(R.id.list_year);
