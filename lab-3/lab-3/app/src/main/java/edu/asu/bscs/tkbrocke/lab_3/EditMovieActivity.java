@@ -34,21 +34,32 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class EditMovieActivity extends AppCompatActivity {
 
-    EditText json, title, year, rated, released, runtime, genre, actors, plot;
+    EditText json, title, year, rated, released, runtime, actors, plot;
+    Spinner genre;
+    ArrayAdapter<String> spinnerAdapter;
+
+    String[] list;
+
     MovieDescription movie = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_movie);
+        setContentView(R.layout.layout_movie_details);
 
         Intent callingIntent = getIntent();
         String movieTitle;
+
+        list = new String[]{"Action", "Adventure", "Animation", "Biography", "Comedy", "Crime",
+            "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Musical",
+            "Mystery", "Romance", "Sci-Fi", "Sports", "Thriller", "War", "Western"};
 
         try{
             movieTitle = callingIntent.getStringExtra("movie_title");
@@ -69,7 +80,11 @@ public class EditMovieActivity extends AppCompatActivity {
         rated = (EditText) findViewById(R.id.rated);
         released = (EditText) findViewById(R.id.released);
         runtime = (EditText) findViewById(R.id.runtime);
-        genre = (EditText) findViewById(R.id.genre);
+        genre = (Spinner) findViewById(R.id.genre);
+        spinnerAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        genre.setAdapter(spinnerAdapter);
+
         actors = (EditText) findViewById(R.id.actors);
         plot = (EditText) findViewById(R.id.plot);
 
@@ -79,7 +94,7 @@ public class EditMovieActivity extends AppCompatActivity {
         rated.setText(movie.getRated());
         released.setText(movie.getReleased());
         runtime.setText(movie.getRuntime());
-        genre.setText(movie.getGenre());
+        genre.setSelection(spinnerAdapter.getPosition(movie.getGenre()));
         actors.setText(movie.getActors());
         plot.setText(movie.getPlot());
     }
@@ -104,7 +119,7 @@ public class EditMovieActivity extends AppCompatActivity {
                     movie.setRated(rated.getText().toString());
                     movie.setReleased(released.getText().toString());
                     movie.setRuntime(runtime.getText().toString());
-                    movie.setGenre(genre.getText().toString());
+                    movie.setGenre(list[genre.getSelectedItemPosition()]);
                     movie.setActors(actors.getText().toString());
                     movie.setPlot(plot.getText().toString());
                     movie.generateJSON();

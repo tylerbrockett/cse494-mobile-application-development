@@ -166,21 +166,22 @@
             <TableRow
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/genre"
                     android:textColor="@color/default_text_color"
                     android:textStyle="bold"/>
-                <EditText
+                <android.support.v7.widget.AppCompatSpinner
                     android:id="@+id/genre"
                     android:gravity="center"
+                    android:layout_gravity="center"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:textColor="@color/default_text_color"
-                    android:layout_height="wrap_content"
-                    android:inputType="textCapWords" />
+                    android:layout_height="wrap_content" />
             </TableRow>
 
             <!-- ACTORS -->

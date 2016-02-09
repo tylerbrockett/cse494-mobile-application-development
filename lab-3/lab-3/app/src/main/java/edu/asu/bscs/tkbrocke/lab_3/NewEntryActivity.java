@@ -33,24 +33,40 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 public class NewEntryActivity extends AppCompatActivity {
 
-    EditText json, title, year, rated, released, runtime, genre, actors, plot;
+    EditText json, title, year, rated, released, runtime, actors, plot;
+    Spinner genre;
+    ArrayAdapter<String> spinnerAdapter;
+
+    String[] list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        list = new String[]{"Action", "Adventure", "Animation", "Biography", "Comedy", "Crime",
+                "Documentary", "Drama", "Family", "Fantasy", "History", "Horror", "Music", "Musical",
+                "Mystery", "Romance", "Sci-Fi", "Sports", "Thriller", "War", "Western"};
+
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_movie);
+        setContentView(R.layout.layout_movie_details);
         json = (EditText) findViewById(R.id.json);
         title = (EditText) findViewById(R.id.title);
         year = (EditText) findViewById(R.id.year);
         rated = (EditText) findViewById(R.id.rated);
         released = (EditText) findViewById(R.id.released);
         runtime = (EditText) findViewById(R.id.runtime);
-        genre = (EditText) findViewById(R.id.genre);
+        genre = (Spinner) findViewById(R.id.genre);
+        spinnerAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item, list);
+        genre.setAdapter(spinnerAdapter);
+        genre.setSelection(0);
+
         actors = (EditText) findViewById(R.id.actors);
         plot = (EditText) findViewById(R.id.plot);
     }
@@ -77,7 +93,7 @@ public class NewEntryActivity extends AppCompatActivity {
                             rated.getText().toString(),
                             released.getText().toString(),
                             runtime.getText().toString(),
-                            genre.getText().toString(),
+                            list[genre.getSelectedItemPosition()],
                             actors.getText().toString(),
                             plot.getText().toString());
                 }
