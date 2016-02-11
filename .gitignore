@@ -55,6 +55,7 @@ Carthage/Build
 **/settings.gradle
 **/androidTest/**
 **/ExampleUnitTest.java
+**/build/**
 
 
 .gradle
@@ -95,17 +96,15 @@ proguard/
 **/.idea/**
 
 # Gradle Stuff
-.gradle/
-gradle/
-/build.gradle
-/gradle.properties
-/gradlew
-/gradlew.bat
-/settings.gradle
+**/.gradle/**
+**/gradle/**
+**/gradle.properties
+**/gradlew/**
+**/gradlew.bat
+**/settings.gradle
 
 # IML files
-*.iml
-/app/app.iml
+**/*.iml
 
 # Build files
 /app/build

@@ -74,6 +74,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getChildView(int groupPosition, final int childPosition,
                              boolean isLastChild, View convertView, ViewGroup parent) {
+        final int gPosition = groupPosition;
+        final MainActivity context = this.parent;
+        final String title = ((MovieDescription)getGroup(groupPosition)).getTitle();
+
         if (convertView == null){
             convertView = ((LayoutInflater)this.parent.getSystemService(Context.LAYOUT_INFLATER_SERVICE)).inflate(R.layout.list_item, null);
         }
@@ -85,6 +89,26 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         TextView genre = (TextView)convertView.findViewById(R.id.list_genre);
         TextView actors = (TextView)convertView.findViewById(R.id.list_actors);
         TextView plot = (TextView)convertView.findViewById(R.id.list_plot);
+
+        ImageView deleteMovie = (ImageView)convertView.findViewById(R.id.delete_movie);
+        ImageView editMovie = (ImageView)convertView.findViewById(R.id.edit_movie);
+
+        editMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent editMovie = new Intent(context, EditMovieActivity.class);
+                editMovie.putExtra("movie_title", title);
+                context.startActivity(editMovie);
+            }
+        });
+
+        deleteMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                library.remove(gPosition);
+                notifyDataSetChanged();
+            }
+        });
 
         year.setText(library.get(groupPosition).getYear());
         rated.setText(library.get(groupPosition).getRated());
@@ -120,8 +144,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public View getGroupView(int groupPosition, boolean isExpanded,
                              View convertView, ViewGroup parent) {
-        final int gPosition = groupPosition;
-        final MainActivity context = this.parent;
+
         final String title = ((MovieDescription)getGroup(groupPosition)).getTitle();
 
         if (convertView == null){
@@ -130,25 +153,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
         ImageView moviePoster = (ImageView)convertView.findViewById(R.id.movie_poster);
         TextView movieTitle = (TextView) convertView.findViewById(R.id.movie_title);
-        ImageView deleteMovie = (ImageView)convertView.findViewById(R.id.delete_movie);
-        ImageView editMovie = (ImageView)convertView.findViewById(R.id.edit_movie);
-
-        editMovie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent editMovie = new Intent(context, EditMovieActivity.class);
-                editMovie.putExtra("movie_title", title);
-                context.startActivity(editMovie);
-            }
-        });
-
-        deleteMovie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                library.remove(gPosition);
-                notifyDataSetChanged();
-            }
-        });
 
         movieTitle.setText(title);
 
