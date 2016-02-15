@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  lab-4
 //
 //  Created by tkbrocke on 2/11/16.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class DetailViewController: UIViewController {
+    
+    var selectedMovie: MovieDescription = MovieDescription(json: "")
+    
+    @IBOutlet weak var mTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        mTitle.text = selectedMovie.getTitle()
     }
 
     override func didReceiveMemoryWarning() {
