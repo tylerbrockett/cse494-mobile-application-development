@@ -38,7 +38,6 @@ class MovieLibrary {
     
     func add(movie:MovieDescription) {
         library.append(movie)
-        sort()
     }
     
     func sort() {

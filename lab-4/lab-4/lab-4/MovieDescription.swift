@@ -97,6 +97,7 @@ class MovieDescription{
                 print("Unable to convert to dictionary")
             }
         }
+        generateJSON()
     }
     
     func getJSON() -> String {

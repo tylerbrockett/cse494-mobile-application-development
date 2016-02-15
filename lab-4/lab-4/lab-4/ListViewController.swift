@@ -26,6 +26,7 @@ class ListViewController: UITableViewController {
     func loadList(notification: NSNotification){
         //load data here
         NSLog("Loading")
+        self.library.sort()
         self.tableView.reloadData()
     }
     
@@ -67,7 +68,7 @@ class ListViewController: UITableViewController {
         if(segue.identifier == "detailViewSegue"){
             let selectedIndex: NSIndexPath = self.movieTable.indexPathForCell(sender as! UITableViewCell)!
             if let detailviewController: DetailViewController = segue.destinationViewController as? DetailViewController {
-                detailviewController.selectedMovie = library.get(selectedIndex.row)
+                detailviewController.movie = library.get(selectedIndex.row)
             }
         }
     }
