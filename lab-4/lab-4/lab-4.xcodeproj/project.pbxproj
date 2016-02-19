@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2F19C7A21C6FE11900A6DE6B /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19C7A11C6FE11900A6DE6B /* ListViewController.swift */; };
+		2F19C7A21C6FE11900A6DE6B /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F19C7A11C6FE11900A6DE6B /* TableViewController.swift */; };
 		2F910D7A1C715711006EB67E /* NewMovieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F910D791C715711006EB67E /* NewMovieViewController.swift */; };
-		2FC767151C6FB06A00EE7CEE /* MovieDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC767141C6FB06A00EE7CEE /* MovieDescription.swift */; };
+		2FC767151C6FB06A00EE7CEE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC767141C6FB06A00EE7CEE /* Movie.swift */; };
 		2FC767171C6FB89300EE7CEE /* MovieLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FC767161C6FB89300EE7CEE /* MovieLibrary.swift */; };
 		98D11E721C6D4AB400F079FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D11E711C6D4AB400F079FE /* AppDelegate.swift */; };
 		98D11E741C6D4AB400F079FE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98D11E731C6D4AB400F079FE /* DetailViewController.swift */; };
@@ -19,9 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F19C7A11C6FE11900A6DE6B /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2F19C7A11C6FE11900A6DE6B /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		2F910D791C715711006EB67E /* NewMovieViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMovieViewController.swift; sourceTree = "<group>"; };
-		2FC767141C6FB06A00EE7CEE /* MovieDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDescription.swift; sourceTree = "<group>"; };
+		2FC767141C6FB06A00EE7CEE /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		2FC767161C6FB89300EE7CEE /* MovieLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieLibrary.swift; sourceTree = "<group>"; };
 		98D11E6E1C6D4AB400F079FE /* lab-4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "lab-4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98D11E711C6D4AB400F079FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -68,9 +68,9 @@
 				98D11E781C6D4AB400F079FE /* Assets.xcassets */,
 				98D11E7A1C6D4AB400F079FE /* LaunchScreen.storyboard */,
 				98D11E7D1C6D4AB400F079FE /* Info.plist */,
-				2FC767141C6FB06A00EE7CEE /* MovieDescription.swift */,
+				2FC767141C6FB06A00EE7CEE /* Movie.swift */,
 				2FC767161C6FB89300EE7CEE /* MovieLibrary.swift */,
-				2F19C7A11C6FE11900A6DE6B /* ListViewController.swift */,
+				2F19C7A11C6FE11900A6DE6B /* TableViewController.swift */,
 				2F910D791C715711006EB67E /* NewMovieViewController.swift */,
 			);
 			path = "lab-4";
@@ -149,9 +149,9 @@
 			files = (
 				2F910D7A1C715711006EB67E /* NewMovieViewController.swift in Sources */,
 				98D11E741C6D4AB400F079FE /* DetailViewController.swift in Sources */,
-				2FC767151C6FB06A00EE7CEE /* MovieDescription.swift in Sources */,
+				2FC767151C6FB06A00EE7CEE /* Movie.swift in Sources */,
 				2FC767171C6FB89300EE7CEE /* MovieLibrary.swift in Sources */,
-				2F19C7A21C6FE11900A6DE6B /* ListViewController.swift in Sources */,
+				2F19C7A21C6FE11900A6DE6B /* TableViewController.swift in Sources */,
 				98D11E721C6D4AB400F079FE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

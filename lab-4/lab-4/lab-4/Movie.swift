@@ -1,7 +1,10 @@
 /*
- * @author Tyler Brockett			mailto:tylerbrockett@gmail.com
- * @project CSE 494 Lab 4 - iOS
- * @version February 13, 2016
+ * @author                  Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course                  ASU CSE 494
+ * @project                 Lab 4
+ * @version                 Feb 18, 2016
+ * @project description     Stores information about movies in a data structure and presents it to the user. Specifically, this project was to learn about TableView and Picker
+ * @class description       Stores information about a specific movie.
  *
  * The MIT License (MIT)
  *
@@ -28,7 +31,7 @@
 
 import Foundation
 
-class MovieDescription{
+class Movie{
     
     var json: String = ""
     var title: String = ""
@@ -173,7 +176,7 @@ class MovieDescription{
         self.plot = plot
     }
     
-    func compareTo(this:MovieDescription, that:MovieDescription) -> Int {
+    func compareTo(this:Movie, that:Movie) -> Int {
         
         if this.getTitle() > that.getTitle() {
             return 1
