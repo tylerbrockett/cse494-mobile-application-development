@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="left">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/movie_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Search by movie title" />
+            <Button
+                android:id="@+id/btn_search"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Search" />
+        </LinearLayout>
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center">
+            <ImageView
+                android:id="@+id/movie_poster"
+                android:src="@drawable/reel"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <ProgressBar
+                android:id="@+id/poster_progress"
+                android:layout_gravity="center"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:visibility="invisible"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" >
+
+                <!-- TITLE -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/title"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/title"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"/>
+                </TableRow>
+
+                <!-- YEAR -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/year"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/year"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"/>
+                </TableRow>
+
+                <!-- RATED -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rated"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/rated"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapCharacters"/>
+                </TableRow>
+
+                <!-- RELEASED -->
+                <!-- Add padding to the longest text, it applies to all -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="15dp"
+                        android:text="@string/released"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/released"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+                </TableRow>
+
+                <!-- RUNTIME -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/runtime"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/runtime"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords"/>
+                </TableRow>
+
+                <!-- GENRE -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/genre"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/genre"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:inputType="textCapWords"
+                        android:layout_height="wrap_content" />
+                </TableRow>
+
+                <!-- ACTORS -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/actors"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/actors"
+                        android:gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapWords" />
+                </TableRow>
+
+                <!-- PLOT -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/plot"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/plot"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences|textAutoCorrect"
+                        android:scrollbars="vertical" />
+                </TableRow>
+
+                <!-- POSTER -->
+                <TableRow
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/poster"
+                        android:textColor="@color/default_text_color"
+                        android:textStyle="bold"/>
+                    <EditText
+                        android:id="@+id/poster"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/default_text_color"
+                        android:layout_height="wrap_content"
+                        android:scrollbars="vertical" />
+                </TableRow>
+            </TableLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>
