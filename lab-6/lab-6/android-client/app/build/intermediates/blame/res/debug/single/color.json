@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_primary_text_material_dark.xml"
+    },
+    {
+        "merged": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "Z:\\494\\494\\lab-6\\lab-6\\android-client\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.1.1\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    }
+]
