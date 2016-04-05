@@ -1,11 +1,11 @@
 /*
- * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
- * @course				ASU CSE 494
- * @project				Lab 6 - iOS
- * @version				March 16, 2016
- * @project-description	Use iOS client to get/post data from/to JSON-RPC Server
+ * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course              ASU CSE 494
+ * @project             Lab 8
+ * @version             April 5, 2016
+ * @project-description Store data from http://www.omdbapi.com/ into Core Data.
  * @class-name          Movie.swift
- * @class-description   Contains information for single movie.
+ * @class-description   Literally used just to parse the json or dict object. Could delete this class and move functionality to Movies entity file.
  *
  * The MIT License (MIT)
  *

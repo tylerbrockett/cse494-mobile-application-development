@@ -1,11 +1,11 @@
 /*
- * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
- * @course				ASU CSE 494
- * @project				Lab 6 - iOS
- * @version				March 16, 2016
- * @project-description	Use iOS client to get/post data from/to JSON-RPC Server
+ * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course              ASU CSE 494
+ * @project             Lab 8
+ * @version             April 5, 2016
+ * @project-description Store data from http://www.omdbapi.com/ into Core Data.
  * @class-name          NetworkAsyncTask.swift
- * @class-description   Performs network activity on separate thread to prevent UI from locking up.
+ * @class-description   Handles network calls and calls the callback methods.
  *
  * The MIT License (MIT)
  *
@@ -46,12 +46,8 @@ class NetworkAsyncTask {
             sendHttpRequest(request, callback: callback)
     }
     
-    // sendHttpRequest
     func sendHttpRequest(request: NSMutableURLRequest,
         callback: (String, String?) -> Void) {
-            // task.resume causes the shared session http request to be posted in the background (non-UI Thread)
-            // the use of the dispatch_async on the main queue causes the callback to be performed on the UI Thread
-            // after the result of the post is received.
             let task = NSURLSession.sharedSession().dataTaskWithRequest(request) {
                 (data, response, error) -> Void in
                 if (error != nil) {
@@ -83,5 +79,5 @@ class NetworkAsyncTask {
             }
         }
     }
+    
 }
-

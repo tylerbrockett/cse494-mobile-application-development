@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F17838D1CB3BD3D00FF796C /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F17838C1CB3BD3D00FF796C /* images.xcassets */; };
 		2F1E6FFF1CB12C39001375AD /* Movies+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6FFD1CB12C39001375AD /* Movies+CoreDataProperties.swift */; };
 		2F1E70001CB12C39001375AD /* Movies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E6FFE1CB12C39001375AD /* Movies.swift */; };
 		2F1E70021CB13507001375AD /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1E70011CB13507001375AD /* CustomTableViewCell.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2F17838C1CB3BD3D00FF796C /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		2F1E6FFD1CB12C39001375AD /* Movies+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movies+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2F1E6FFE1CB12C39001375AD /* Movies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movies.swift; sourceTree = "<group>"; };
 		2F1E70011CB13507001375AD /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
@@ -79,11 +81,12 @@
 				2FEE4B661CB104BE006D5983 /* NetworkAsyncTask.swift */,
 				2FEE4B511CB1032A006D5983 /* NewMovieController.swift */,
 				2FEE4B671CB104BE006D5983 /* TableViewController.swift */,
-				2FEE4B531CB1032A006D5983 /* Main.storyboard */,
+				2FEE4B561CB1032A006D5983 /* lab_8.xcdatamodeld */,
+				2F17838C1CB3BD3D00FF796C /* images.xcassets */,
 				2FEE4B591CB1032A006D5983 /* Assets.xcassets */,
+				2FEE4B531CB1032A006D5983 /* Main.storyboard */,
 				2FEE4B5B1CB1032A006D5983 /* LaunchScreen.storyboard */,
 				2FEE4B5E1CB1032A006D5983 /* Info.plist */,
-				2FEE4B561CB1032A006D5983 /* lab_8.xcdatamodeld */,
 			);
 			path = "lab-8";
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FEE4B5D1CB1032A006D5983 /* LaunchScreen.storyboard in Resources */,
+				2F17838D1CB3BD3D00FF796C /* images.xcassets in Resources */,
 				2FEE4B5A1CB1032A006D5983 /* Assets.xcassets in Resources */,
 				2FEE4B551CB1032A006D5983 /* Main.storyboard in Resources */,
 			);

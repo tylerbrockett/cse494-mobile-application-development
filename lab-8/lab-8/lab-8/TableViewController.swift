@@ -1,11 +1,11 @@
 /*
- * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
- * @course				ASU CSE 494
- * @project				Lab 6 - iOS
- * @version				March 16, 2016
- * @project-description	Use iOS client to get/post data from/to JSON-RPC Server
+ * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course              ASU CSE 494
+ * @project             Lab 8
+ * @version             April 5, 2016
+ * @project-description Store data from http://www.omdbapi.com/ into Core Data.
  * @class-name          TableViewController.swift
- * @class-description   Displays list of movies from the server.
+ * @class-description   Displays current contents of movies in Core Data to the user. Fetches the movies' poster images and displays them as well.
  *
  * The MIT License (MIT)
  *
@@ -33,18 +33,24 @@
 import UIKit
 import CoreData
 
-
 class TableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var movieTable: UITableView!
     
-    @IBAction func newMovie(sender: UIBarButtonItem) {
-        NSLog("Before add segue")
-        performSegueWithIdentifier("add", sender: sender)
-    }
-    
     var context: NSManagedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
     var dataController: NSFetchedResultsController = NSFetchedResultsController()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        dataController = getFetchResultsController()
+        dataController.delegate = self
+        do {
+            try dataController.performFetch()
+        } catch _ {
+        }
+        
+        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+    }
     
     func getFetchResultsController() -> NSFetchedResultsController {
         dataController = NSFetchedResultsController(fetchRequest: listFetchRequest(), managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -62,27 +68,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         self.movieTable.reloadData()
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        dataController = getFetchResultsController()
-        dataController.delegate = self
-        do {
-            try dataController.performFetch()
-        } catch _ {
-        }
-
-        
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
-        // let addButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Add, target: self, action: "newMovie")
-        // self.navigationItem.rightBarButtonItem = addButton
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "loadList:",name:"loadMovieList", object: nil)
-    }
-    
-    func loadList(notification: NSNotification){
-        self.movieTable.reloadData()
-    }
-    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         let numberOfSections  = dataController.sections?.count
         return numberOfSections!
@@ -96,7 +81,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = movieTable.dequeueReusableCellWithIdentifier("tableCell", forIndexPath: indexPath) as! CustomTableViewCell
         let movie = dataController.objectAtIndexPath(indexPath) as! Movies
-        
 
         cell.titleTF.text = movie.title!
         cell.yearTF.text = movie.year!
@@ -104,11 +88,15 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
         let nat:NetworkAsyncTask = NetworkAsyncTask()
         nat.getPoster(movie.poster!, callback: { (res: NSData?, error:String?) -> Void in
             if error != nil {
+                cell.posterIV.image = UIImage(named: "default_poster")
                 NSLog(error!)
             } else {
                 if res != nil {
                     let image = UIImage(data: res!)
                     cell.posterIV.image = image
+                }
+                else {
+                    cell.posterIV.image = UIImage(named: "default_poster")
                 }
             }
         })
@@ -134,9 +122,6 @@ class TableViewController: UITableViewController, NSFetchedResultsControllerDele
                 viewController.movie = movie
             }
         }
-        if(segue.identifier == "add"){
-            // Do something here
-            NSLog("add segue initiated")
-        }
     }
+    
 }
