@@ -1,0 +1,38 @@
+<resources>
+
+    <string name="jsonrpcserver">http://192.168.1.32:8080</string>
+    <string name="mediastreamerserver">http://192.168.1.32:8888</string>
+
+    <!--
+    <string name="jsonrpcserver">http://10.0.2.2:8080</string>
+    <string name="mediastreamerserver">http://10.0.2.2:8888</string>
+    -->
+
+    <string name="app_name">Movie Database</string>
+    <string name="activity_title">0 Movies</string>
+    <string name="add_new">New</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="new_movie">New Movie</string>
+    <string name="edit_movie">Edit Movie</string>
+
+    <string name="json">Json</string>
+    <string name="title">Title</string>
+    <string name="year">Year</string>
+    <string name="rated">Rated</string>
+    <string name="released">Released</string>
+    <string name="runtime">Runtime</string>
+    <string name="genre">Genre</string>
+    <string name="actors">Actors</string>
+    <string name="plot">Plot</string>
+    <string name="poster">Poster</string>
+
+    <string name="or">Or&#8230;</string>
+    <string name="empty">Empty</string>
+
+    <string name="refresh">Refresh</string>
+    <string name="enter_ip">Enter IP Address Here</string>
+    <string name="ip_address">IP Address:</string>
+    <string name="change_ip">Change IP Address</string>
+
+</resources>
