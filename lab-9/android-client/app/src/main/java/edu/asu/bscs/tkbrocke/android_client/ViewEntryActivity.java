@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from http://www.omdbapi.com/ and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			ViewEntryActivity.java
  * @class-description	View / Edit data stored in the database.
  *
@@ -58,7 +58,7 @@ import edu.asu.bscs.tkbrocke.android_client.R;
 
 public class ViewEntryActivity extends AppCompatActivity {
 
-    EditText title, year, rated, released, runtime, actors, genre, plot;
+    EditText title, year, rated, released, runtime, actors, genre, plot, filename;
     ImageView iv;
     ProgressBar pb;
     MovieDatabase database;
@@ -86,6 +86,7 @@ public class ViewEntryActivity extends AppCompatActivity {
         genre = (EditText) findViewById(R.id.genre);
         actors = (EditText) findViewById(R.id.actors);
         plot = (EditText) findViewById(R.id.plot);
+        filename = (EditText) findViewById(R.id.filename);
         iv = (ImageView) findViewById(R.id.movie_poster);
         pb = (ProgressBar) findViewById(R.id.poster_progress);
 
@@ -101,6 +102,7 @@ public class ViewEntryActivity extends AppCompatActivity {
             genre.setText(cursor.getString(MovieDatabase.COLUMN_GENRE));
             actors.setText(cursor.getString(MovieDatabase.COLUMN_ACTORS));
             plot.setText(cursor.getString(MovieDatabase.COLUMN_PLOT));
+            filename.setText(cursor.getString(MovieDatabase.COLUMN_FILENAME));
             new DownloadPosterTask().execute(cursor.getString(MovieDatabase.COLUMN_POSTER));
         }
         else {
@@ -133,6 +135,7 @@ public class ViewEntryActivity extends AppCompatActivity {
                     cv.put(MovieDatabase.KEY_GENRE, genre.getText().toString());
                     cv.put(MovieDatabase.KEY_ACTORS, actors.getText().toString());
                     cv.put(MovieDatabase.KEY_PLOT, plot.getText().toString());
+                    cv.put(MovieDatabase.KEY_FILENAME, filename.getText().toString());
                     SQLiteDatabase db = database.getWritableDatabase();
                     db.update(MovieDatabase.TABLE_MOVIES, cv, MovieDatabase.ID + "=" + movieID, null);
                     db.close();

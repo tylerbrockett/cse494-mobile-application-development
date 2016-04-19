@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from http://www.omdbapi.com/ and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			Movie.java
  * @class-description	Used to just parse data from JSON.
  *
@@ -47,6 +47,7 @@ public class Movie implements Comparable<Movie>{
     private String actors = "";
     private String plot = "";
     private String poster = "";
+    private String filename = "";
 
     public Movie(String json){
         this.json = json;
@@ -55,7 +56,8 @@ public class Movie implements Comparable<Movie>{
 
     public Movie(String title,      String year,    String rated,
                  String released,   String runtime, String genre,
-                 String actors,     String plot,    String poster)
+                 String actors,     String plot,    String poster,
+                 String filename)
     {
         this.title = title;
         this.year = year;
@@ -66,6 +68,7 @@ public class Movie implements Comparable<Movie>{
         this.actors = actors;
         this.plot = plot;
         this.poster = poster;
+        this.filename = filename;
         generateJSON();
     }
 
@@ -84,8 +87,9 @@ public class Movie implements Comparable<Movie>{
                         "\"Runtime\":\"" + this.runtime + "\"," +
                         "\"Genre\":\"" + this.genre + "\"," +
                         "\"Actors\":\"" + this.actors + "\"," +
-                        "\"Plot\":\"" + this.plot + "\"" +
-                        "\"Poster\":\"" + this.poster + "\"" +
+                        "\"Plot\":\"" + this.plot + "\"," +
+                        "\"Poster\":\"" + this.poster + "\"," +
+                        "\"Filename\":\"" + this.filename + "\"" +
                 "}";
         return this.json;
     }
@@ -102,6 +106,16 @@ public class Movie implements Comparable<Movie>{
             this.actors = jo.getString("Actors");
             this.plot = jo.getString("Plot");
             this.poster = jo.getString("Poster");
+            try {
+                String temp = (jo.getString("Filename"));
+                if(temp.equals("unknown.mp4")) {
+                    this.filename = "";
+                } else {
+                    this.filename = temp;
+                }
+            } catch (Exception e){
+                this.filename = "";
+            }
         }catch(JSONException e){
             System.out.println("Json Error:  " + e.toString());
             this.title = "Error";
@@ -113,6 +127,7 @@ public class Movie implements Comparable<Movie>{
             this.actors = "Error";
             this.plot = "Error";
             this.poster = "Error";
+            this.filename = "Error";
         }
     }
 
@@ -154,6 +169,10 @@ public class Movie implements Comparable<Movie>{
         return this.poster;
     }
 
+    public String getFilename(){
+        return this.filename;
+    }
+
     public void setJSON(String json){
         this.json = json;
         parseJSON(json);
@@ -193,6 +212,10 @@ public class Movie implements Comparable<Movie>{
 
     public void setPoster(String poster){
         this.poster = poster;
+    }
+
+    public void setFilename(String filename){
+        this.filename = filename;
     }
 
     @Override

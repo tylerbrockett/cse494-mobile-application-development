@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from http://www.omdbapi.com/ and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			CustomCursorAdapter.java
  * @class-description	Specifies how ListView interfaces with the data
  *
@@ -76,8 +76,6 @@ public class CustomCursorAdapter extends CursorAdapter {
         ImageView watch;
         ProgressBar poster_progress;
         DownloadPosterTask poster_loader;
-        FileCheckTask file_check;
-        String filename;
     }
 
     public void dataAdded(){
@@ -107,6 +105,7 @@ public class CustomCursorAdapter extends CursorAdapter {
         final long id = cursor.getLong(MovieDatabase.COLUMN_ID);
         final String title = cursor.getString(MovieDatabase.COLUMN_TITLE);
         final String posterURL = cursor.getString(MovieDatabase.COLUMN_POSTER);
+        final String filename = cursor.getString(MovieDatabase.COLUMN_FILENAME);
 
         final ViewHolder vh = (ViewHolder) v.getTag();
         vh.movie_title.setText(cursor.getString(MovieDatabase.COLUMN_TITLE));
@@ -128,10 +127,17 @@ public class CustomCursorAdapter extends CursorAdapter {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, WatchMediaActivity.class);
-                intent.putExtra("filename", vh.filename);
+                intent.putExtra("filename", filename);
                 context.startActivity(intent);
             }
         });
+
+        if ( ! filename.equals("")) {
+            vh.watch.setVisibility(View.VISIBLE);
+        } else {
+            vh.watch.setVisibility(View.INVISIBLE);
+        }
+
         /* 1. Cancel any previous AsyncTask trying to load image for cell.
                This prevents cell from loading multiple attempted calls before
                 it gets to the correct call.
@@ -150,11 +156,6 @@ public class CustomCursorAdapter extends CursorAdapter {
             vh.poster_progress.setVisibility(View.INVISIBLE);
             vh.movie_poster.setImageResource(R.drawable.reel);
         }
-
-        vh.file_check.cancel(true);
-        vh.watch.setVisibility(View.INVISIBLE);
-        vh.file_check = new FileCheckTask(vh);
-        vh.file_check.execute(title);
     }
 
     @Override
@@ -167,7 +168,6 @@ public class CustomCursorAdapter extends CursorAdapter {
         vh.poster_progress = (ProgressBar)v.findViewById(R.id.poster_progress);
         vh.watch = (ImageView) v.findViewById(R.id.watch);
         vh.poster_loader = new DownloadPosterTask(vh);
-        vh.file_check = new FileCheckTask(vh);
         v.setTag(vh);
         return v;
     }
@@ -195,7 +195,6 @@ public class CustomCursorAdapter extends CursorAdapter {
     public void setOnDataAddedListener(OnDataAddedListener onDataAddedListener){
         this.onDataAddedListener = onDataAddedListener;
     }
-
 
     private class DownloadPosterTask extends AsyncTask<String, Void, Bitmap> {
         ViewHolder vh;
@@ -226,42 +225,6 @@ public class CustomCursorAdapter extends CursorAdapter {
             }
             vh.poster_progress.setVisibility(View.INVISIBLE);
             vh.movie_poster.setVisibility(View.VISIBLE);
-        }
-    }
-
-    private class FileCheckTask extends AsyncTask<String, Void, String> {
-        ViewHolder vh;
-
-        public FileCheckTask(ViewHolder vh) {
-            this.vh = vh;
-            this.vh.filename = null;
-        }
-
-        @Override
-        protected String doInBackground(String... input) {
-            String filename = null;
-            String title = input[0];
-            String baseURL = context.getString(R.string.jsonrpcserver);
-            try {
-                String requestData = "{ \"jsonrpc\":\"2.0\", \"method\":\""+ ServerRequest.GET +"\", \"params\":[\"" + title + "\"],\"id\":3}";
-                HttpRequest conn = new HttpRequest((new URL(baseURL)), context);
-                String resultStr = conn.call(requestData);
-                Log.d("FileCheckTask", new JSONObject(resultStr).toString(2));
-                filename = new JSONObject(resultStr).getJSONObject("result").getString("Filename");
-                return filename;
-            } catch (Exception e) { }
-            return filename;
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            if (result != null && ! result.equals("") && ! result.equals("unknown.mp4")) {
-                vh.watch.setVisibility(View.VISIBLE);
-                vh.filename = result;
-            } else {
-                vh.watch.setVisibility(View.INVISIBLE);
-                vh.filename = null;
-            }
         }
     }
 }

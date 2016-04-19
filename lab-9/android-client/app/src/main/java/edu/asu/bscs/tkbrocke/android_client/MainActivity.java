@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from http://www.omdbapi.com/ and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			MainActivity.java
  * @class-description   Displays list containing database contents to the user.
  *

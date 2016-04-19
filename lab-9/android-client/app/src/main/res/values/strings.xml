@@ -1,12 +1,8 @@
 <resources>
 
-    <string name="jsonrpcserver">http://192.168.1.32:8080</string>
-    <string name="mediastreamerserver">http://192.168.1.32:8888</string>
-
-    <!--
+    <string name="omdbserver">http://www.omdbapi.com</string>
     <string name="jsonrpcserver">http://10.0.2.2:8080</string>
     <string name="mediastreamerserver">http://10.0.2.2:8888</string>
-    -->
 
     <string name="app_name">Movie Database</string>
     <string name="activity_title">0 Movies</string>
@@ -15,6 +11,9 @@
     <string name="cancel">Cancel</string>
     <string name="new_movie">New Movie</string>
     <string name="edit_movie">Edit Movie</string>
+
+    <string name="omdb">OMDB Server</string>
+    <string name="JsonRPC">JsonRPC Server</string>
 
     <string name="json">Json</string>
     <string name="title">Title</string>
@@ -26,6 +25,7 @@
     <string name="actors">Actors</string>
     <string name="plot">Plot</string>
     <string name="poster">Poster</string>
+    <string name="filename">Filename</string>
 
     <string name="or">Or&#8230;</string>
     <string name="empty">Empty</string>

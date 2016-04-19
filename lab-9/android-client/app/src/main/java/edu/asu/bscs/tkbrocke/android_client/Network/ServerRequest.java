@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 6 - Android
+ * @project				Lab 9 - Android
  * @version				March 16, 2016
- * @project-description	Use Android client to get/post data from/to JSON-RPC Server
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			ServerRequest.java
  * @class-description	Container for server request/response data.
  *

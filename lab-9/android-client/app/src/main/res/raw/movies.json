@@ -2,50 +2,6 @@
   "Movies":
   [
     {
-      "Title": "Minions Banana Song",
-      "Year": "2015",
-      "Rated": "PG",
-      "Released": "12 Dec 2015",
-      "Runtime": "5 min",
-      "Genre": "Animation",
-      "Actors": "Steve, Kevin, Bob, Stuart",
-      "Plot": "Banana is a song sung by The Minions in the teaser trailer of Despicable Me 2. It is a parody of the Beach Boys Barbara Ann. One minion gets annoyed by another, most likely Stuart, who keeps on playing his party horn while they are singing. So, at the end, he punched Stuart.",
-      "Poster": "https://upload.wikimedia.org/wikipedia/en/2/29/Despicable_Me_2_poster.jpg"
-    },
-    {
-      "Title": "Minions Banana",
-      "Year": "2015",
-      "Rated": "PG",
-      "Released": "12 Dec 2015",
-      "Runtime": "5 min",
-      "Genre": "Animation",
-      "Actors": "Steve, Kevin, Stuart",
-      "Plot": "Minions fight over a banana. In the process, they wreak havoc in the Bomb Factory.",
-      "Poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Despicable_Me_logo.svg/250px-Despicable_Me_logo.svg.png"
-    },
-    {
-      "Title": "Minions Panic in the Mailroom",
-      "Year": "2015",
-      "Rated": "PG",
-      "Released": "12 Dec 2015",
-      "Runtime": "5 min",
-      "Genre": "Animation",
-      "Actors": "Ken, Mike",
-      "Plot": "Ken and Mike are working in a package room to send parcels through different parts of the lab, while Ken is busy playing a handheld video game. When a package containing expired PX-41 gets jammed in the pneumatic delivery system, it transforms Mike into an Evil Minion- but he keeps shifting back and forth, much to Ken's amusement.",
-      "Poster": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Despicable_Me_logo.svg/250px-Despicable_Me_logo.svg.png"
-    },
-    {
-      "Title": "Interstellar",
-      "Year": "2014",
-      "Rated": "PG-13",
-      "Released": "07 Nov 2014",
-      "Runtime": "169 min",
-      "Genre": "Adventure",
-      "Actors": "Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow",
-      "Plot": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-      "Poster": "http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg"
-    },
-    {
       "Title": "Star Wars: Episode I - The Phantom Menace",
       "Year": "1999",
       "Rated": "PG",
@@ -154,50 +110,6 @@
       "Actors": "Christian Bale, Gary Oldman, Tom Hardy, Joseph Gordon-Levitt",
       "Plot": "Eight years after the Joker's reign of anarchy, the Dark Knight, with the help of the enigmatic Selia, is forced from his imposed exile to save Gotham City, now on the edge of total annihilation, from the brutal guerrilla terrorist Bane.",
       "Poster": "http://ia.media-imdb.com/images/M/MV5BMTk4ODQzNDY3Ml5BMl5BanBnXkFtZTcwODA0NTM4Nw@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Inception",
-      "Year": "2010",
-      "Rated": "PG-13",
-      "Released": "16 Jul 2010",
-      "Runtime": "148 min",
-      "Genre": "Action",
-      "Actors": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page, Tom Hardy",
-      "Plot": "A thief who steals corporate secrets through use of the dream-sharing technology is given the inverse task of planting an idea into the mind of a CEO.",
-      "Poster": "http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Despicable Me",
-      "Year": "2010",
-      "Rated": "PG",
-      "Released": "09 Jul 2010",
-      "Runtime": "95 min",
-      "Genre": "Animation",
-      "Actors": "Steve Carell, Jason Segel, Russell Brand, Julie Andrews",
-      "Plot": "When a criminal mastermind uses a trio of orphan girls as pawns for a grand scheme, he finds their love is profoundly changing him for the better.",
-      "Poster": "http://ia.media-imdb.com/images/M/MV5BMTY3NjY0MTQ0Nl5BMl5BanBnXkFtZTcwMzQ2MTc0Mw@@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Despicable Me 2",
-      "Year": "2013",
-      "Rated": "PG",
-      "Released": "03 Jul 2013",
-      "Runtime": "98 min",
-      "Genre": "Animation",
-      "Actors": "Steve Carell, Kristen Wiig, Benjamin Bratt, Miranda Cosgrove",
-      "Plot": "When Gru, the world's most super-bad turned super-dad has been recruited by a team of officials to stop lethal muscle and a host of Gru's own, He has to fight back with new gadgetry, cars, and more minion madness.",
-      "Poster": "http://ia.media-imdb.com/images/M/MV5BMjExNjAyNTcyMF5BMl5BanBnXkFtZTgwODQzMjQ3MDE@._V1_SX300.jpg"
-    },
-    {
-      "Title": "Minions",
-      "Year": "2015",
-      "Rated": "PG",
-      "Released": "10 Jul 2015",
-      "Runtime": "91 min",
-      "Genre": "Animation",
-      "Actors": "Sandra Bullock, Jon Hamm, Michael Keaton, Allison Janney",
-      "Plot": "Minions Stuart, Kevin and Bob are recruited by Scarlet Overkill, a super-villain who, alongside her inventor husband Herb, hatches a plot to take over the world.",
-      "Poster": "http://ia.media-imdb.com/images/M/MV5BMTg2MTMyMzU0M15BMl5BanBnXkFtZTgwOTU3ODk4NTE@._V1_SX300.jpg"
     }
   ]
 }

@@ -1,9 +1,9 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from http://www.omdbapi.com/ and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			MovieDatabase.java
  * @class-description	Template and helper for SQLite Database
  *
@@ -66,6 +66,7 @@ public class MovieDatabase extends SQLiteOpenHelper {
     public static final String KEY_ACTORS = "actors";
     public static final String KEY_PLOT = "plot";
     public static final String KEY_POSTER = "poster";
+    public static final String KEY_FILENAME = "filename";
 
     public static final int COLUMN_ID = 0;
     public static final int COLUMN_TITLE = 1;
@@ -77,6 +78,7 @@ public class MovieDatabase extends SQLiteOpenHelper {
     public static final int COLUMN_ACTORS = 7;
     public static final int COLUMN_PLOT = 8;
     public static final int COLUMN_POSTER = 9;
+    public static final int COLUMN_FILENAME = 10;
 
     public static final String CREATE_TABLE_MOVIES =
             "CREATE TABLE IF NOT EXISTS " + TABLE_MOVIES + " (" +
@@ -89,9 +91,9 @@ public class MovieDatabase extends SQLiteOpenHelper {
                     KEY_GENRE + " TEXT, " +
                     KEY_ACTORS + " TEXT, " +
                     KEY_PLOT + " TEXT, " +
-                    KEY_POSTER + " TEXT);";
+                    KEY_POSTER + " TEXT, " +
+                    KEY_FILENAME + " TEXT);";
     public static final String DROP_TABLE_MOVIES = "DROP TABLE IF EXISTS " + TABLE_MOVIES;
-
 
     public MovieDatabase(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -115,7 +117,6 @@ public class MovieDatabase extends SQLiteOpenHelper {
         // Drop it for now if downgrading
         database.execSQL(DROP_TABLE_MOVIES);
     }
-
 
     class CopyDatabaseAsyncTask extends AsyncTask<SQLiteDatabase, Integer, Void> {
         Context context;
@@ -149,6 +150,7 @@ public class MovieDatabase extends SQLiteOpenHelper {
                     cv.put(KEY_ACTORS, movie.getActors());
                     cv.put(KEY_PLOT, movie.getPlot());
                     cv.put(KEY_POSTER, movie.getPoster());
+                    cv.put(KEY_FILENAME, movie.getFilename());
                     database[0].insert(TABLE_MOVIES, null, cv);
                 }
             } catch (Exception e){

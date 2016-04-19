@@ -1,11 +1,11 @@
 /*
  * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course				ASU CSE 494
- * @project				Lab 7
- * @version				March 29, 2016
- * @project-description	Store data from omdbapi.com and store it to SQLite Database.
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
  * @class-name			NewEntryActivity.java
- * @class-description	Allows user to either manually enter data or search the omdbapi.com server for data.
+ * @class-description	Allows user to either manually enter data or search the servers for data.
  *
  * The MIT License (MIT)
  *
@@ -49,6 +49,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import org.json.JSONObject;
@@ -62,10 +64,11 @@ import edu.asu.bscs.tkbrocke.android_client.HelperClasses.Movie;
 
 public class NewEntryActivity extends AppCompatActivity {
 
-    EditText search, title, year, rated, released, runtime, actors, genre, plot, poster;
+    EditText search, title, year, rated, released, runtime, actors, genre, plot, poster, filename;
+    RadioButton radioOmdb, radioJsonRpc;
     ImageView iv;
     ProgressBar pb;
-    Button add;
+    Button searchBtn;
     MovieDatabase database;
 
     @Override
@@ -75,7 +78,7 @@ public class NewEntryActivity extends AppCompatActivity {
         database = new MovieDatabase(this);
 
         search = (EditText)findViewById(R.id.movie_search);
-        add = (Button)findViewById(R.id.btn_search);
+        searchBtn = (Button)findViewById(R.id.btn_search);
 
         title = (EditText)findViewById(R.id.title);
         year = (EditText)findViewById(R.id.year);
@@ -86,13 +89,17 @@ public class NewEntryActivity extends AppCompatActivity {
         actors = (EditText)findViewById(R.id.actors);
         plot = (EditText)findViewById(R.id.plot);
         poster = (EditText)findViewById(R.id.poster);
-        iv = (ImageView) findViewById(R.id.movie_poster);
-        pb = (ProgressBar) findViewById(R.id.poster_progress);
+        filename = (EditText)findViewById(R.id.filename);
+        iv = (ImageView)findViewById(R.id.movie_poster);
+        pb = (ProgressBar)findViewById(R.id.poster_progress);
+        radioOmdb = (RadioButton)findViewById(R.id.omdbRadio);
+        radioJsonRpc = (RadioButton)findViewById(R.id.jsonRpcRadio);
 
-        add.setOnClickListener(new View.OnClickListener() {
+        searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new NetworkAsyncTask(NewEntryActivity.this).execute(search.getText().toString().replace(" ", "%20"));
+                int server = (radioOmdb.isChecked() ? NetworkAsyncTask.SERVER_OMDB : NetworkAsyncTask.SERVER_JSON_RPC);
+                new NetworkAsyncTask(NewEntryActivity.this, server).execute(search.getText().toString());
             }
         });
     }
@@ -120,6 +127,7 @@ public class NewEntryActivity extends AppCompatActivity {
                     cv.put(MovieDatabase.KEY_ACTORS, actors.getText().toString());
                     cv.put(MovieDatabase.KEY_PLOT, plot.getText().toString());
                     cv.put(MovieDatabase.KEY_POSTER, poster.getText().toString());
+                    cv.put(MovieDatabase.KEY_FILENAME, filename.getText().toString());
                     SQLiteDatabase db = database.getWritableDatabase();
                     db.insert(MovieDatabase.TABLE_MOVIES, null, cv);
                     db.close();
@@ -140,20 +148,35 @@ public class NewEntryActivity extends AppCompatActivity {
     }
 
     public class NetworkAsyncTask extends AsyncTask<String, Integer, String> {
-        Context context;
+        public static final int SERVER_OMDB = 0;
+        public static final int SERVER_JSON_RPC = 1;
 
-        public NetworkAsyncTask(Context context){
+        Context context;
+        int server;
+
+        public NetworkAsyncTask(Context context, int server){
+            this.server = server;
             this.context = context;
+            Log.d("Server", "" + server);
         }
 
         @Override
         protected String doInBackground(String... movieTitle) {
             String resultStr = "{\"Response\": \"False\"}";
+
+            String urlString = (this.server == SERVER_OMDB ?
+                    context.getString(R.string.omdbserver) + "/?t=" + movieTitle[0].replace(" ", "+") + "&plot=short&r=json" :
+                    context.getString(R.string.jsonrpcserver)
+            );
+            String body = (this.server == SERVER_OMDB ?
+                "" :
+                "{ \"jsonrpc\":\"2.0\", \"method\":\"get\", \"params\":[\"" + movieTitle[0] + "\"],\"id\":3}"
+            );
+
             try {
-                String urlString = "http://www.omdbapi.com/?t=" + movieTitle[0] + "&plot=short&r=json";
-                Log.d("URL", urlString);
+                Log.d("URL:\nBody:", urlString + "\n" + body);
                 HttpRequest conn = new HttpRequest(new URL(urlString), context);
-                resultStr = conn.call(urlString);
+                resultStr = conn.call(body);
             }catch (Exception ex){
                 android.util.Log.d(this.getClass().getSimpleName(),"exception in remote call "+
                         ex.getMessage());
@@ -165,26 +188,48 @@ public class NewEntryActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             try {
                 JSONObject jo = new JSONObject(result);
-
-                if(jo.getBoolean("Response")){
-                    Movie movie = new Movie(jo.toString());
-                    title.setText(movie.getTitle());
-                    year.setText(movie.getYear());
-                    rated.setText(movie.getRated());
-                    released.setText(movie.getReleased());
-                    runtime.setText(movie.getRuntime());
-                    actors.setText(movie.getActors());
-                    genre.setText(movie.getGenre());
-                    plot.setText(movie.getPlot());
-                    poster.setText(movie.getPoster());
-                    Toast.makeText(context, "Movie Found: " + movie.getTitle(), Toast.LENGTH_LONG).show();
-                    new DownloadPosterTask().execute(movie.getPoster());
+                if (server == SERVER_OMDB){
+                    if(jo.getBoolean("Response")){
+                        Movie movie = new Movie(jo.toString());
+                        new DownloadPosterTask().execute(movie.getPoster());
+                        title.setText(movie.getTitle());
+                        year.setText(movie.getYear());
+                        rated.setText(movie.getRated());
+                        released.setText(movie.getReleased());
+                        runtime.setText(movie.getRuntime());
+                        actors.setText(movie.getActors());
+                        genre.setText(movie.getGenre());
+                        plot.setText(movie.getPlot());
+                        poster.setText(movie.getPoster());
+                        filename.setText(movie.getFilename());
+                        Toast.makeText(context, "Movie Found: " + movie.getTitle(), Toast.LENGTH_LONG).show();
+                    }
+                    else {
+                        Toast.makeText(context, "Could not find movie", Toast.LENGTH_LONG).show();
+                    }
+                } else if (server == SERVER_JSON_RPC){
+                    JSONObject m = jo.getJSONObject("result");
+                    Movie movie = new Movie(m.toString());
+                    if( ! movie.getTitle().equals("Unknown") && ! movie.getTitle().equals("Error")){
+                        new DownloadPosterTask().execute(movie.getPoster());
+                        title.setText(movie.getTitle());
+                        year.setText(movie.getYear());
+                        rated.setText(movie.getRated());
+                        released.setText(movie.getReleased());
+                        runtime.setText(movie.getRuntime());
+                        actors.setText(movie.getActors());
+                        genre.setText(movie.getGenre());
+                        plot.setText(movie.getPlot());
+                        poster.setText(movie.getPoster());
+                        filename.setText(movie.getFilename());
+                        Toast.makeText(context, "Movie Found: " + movie.getTitle(), Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(context, "Could not find movie", Toast.LENGTH_LONG).show();
+                    }
                 }
-                else {
-                    Toast.makeText(context, "Could not find movie", Toast.LENGTH_LONG).show();
-                }
-            }catch (Exception ex){
-                android.util.Log.d(this.getClass().getSimpleName(),"Exception: "+ex.getMessage());
+            }catch (Exception e){
+                android.util.Log.d("NewEntryActivity","Exception: " + e.getMessage());
+                Toast.makeText(NewEntryActivity.this, "Error occurred", Toast.LENGTH_SHORT).show();
             }
         }
     }

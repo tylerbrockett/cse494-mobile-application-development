@@ -1,35 +1,54 @@
+/*
+ * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course				ASU CSE 494
+ * @project				Lab 9 - Android
+ * @version				April 19, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
+ * @class-name			WatchMediaActivity.java
+ * @class-description	Plays the movie file if it exists (it always should if it gets to this point).
+ *
+ * The MIT License (MIT)
+ *
+ * Copyright (c) 2016 Tyler Brockett
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ *
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
+ */
+
 package edu.asu.bscs.tkbrocke.android_client;
 
 import android.content.Context;
-import android.content.res.Configuration;
 import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.MediaController;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-import org.json.JSONObject;
-
-import java.net.URL;
-
-import edu.asu.bscs.tkbrocke.android_client.Network.HttpRequest;
-import edu.asu.bscs.tkbrocke.android_client.Network.ServerRequest;
-
 public class WatchMediaActivity extends AppCompatActivity {
 
     VideoView player;
     private MediaController controller;
-    private MediaMetadataRetriever metadataRetriever;
 
     String filename = "";
-    Context context;
     int position = 0;
 
     @Override
@@ -63,7 +82,6 @@ public class WatchMediaActivity extends AppCompatActivity {
             public void onPrepared(MediaPlayer mp) {
                 mp.seekTo(position);
                 mp.start();
-                // player.start();
             }
         });
         player.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
