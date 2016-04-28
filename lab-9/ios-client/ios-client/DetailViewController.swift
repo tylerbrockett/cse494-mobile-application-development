@@ -1,9 +1,9 @@
 /*
  * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course              ASU CSE 494
- * @project             Lab 8
- * @version             April 5, 2016
- * @project-description Store data from http://www.omdbapi.com/ into Core Data.
+ * @project             Lab 9 - iOS
+ * @version             April 25, 2016
+ * @project-description Get movie data from two sources and play movie if file exists.
  * @class-name          DetailViewController.swift
  * @class-description   Gets the movie details from Core Data and displays it to the user. Also, fetches the poster image from the web service using it's URL stored in Core Data.
  *
