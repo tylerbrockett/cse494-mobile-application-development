@@ -1,10 +1,10 @@
 /*
- * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
- * @course              ASU CSE 494
- * @project             Lab 8
- * @version             April 5, 2016
- * @project-description Store data from http://www.omdbapi.com/ into Core Data.
- * @class-name          CustomTableViewCell.swift
+ * @author				Tyler Brockett	mailto:tylerbrockett@gmail.com
+ * @course				ASU CSE 494
+ * @project				Lab 9 - iOS
+ * @version				April 25, 2016
+ * @project-description	Get movie data from two sources and play movie if file exists.
+ * @class-name			CustomTableViewCell.swift
  * @class-description   Links the custom cell on the storyboard with the actual code.
  *
  * The MIT License (MIT)

@@ -1,11 +1,11 @@
 /*
  * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course              ASU CSE 494
- * @project             Lab 8
- * @version             April 5, 2016
- * @project-description Store data from http://www.omdbapi.com/ into Core Data.
- * @class-name          Movie.swift
- * @class-description   Literally used just to parse the json or dict object. Could delete this class and move functionality to Movies entity file.
+ * @project             Lab 9 - iOS
+ * @version             April 25, 2016
+ * @project-description Get movie data from two sources and play movie if file exists.
+ * @class-name          MovieParser.swift
+ * @class-description   Literally used just to parse the json or dict object. Could delete this class and move functionality to Movie entity file.
  *
  * The MIT License (MIT)
  *

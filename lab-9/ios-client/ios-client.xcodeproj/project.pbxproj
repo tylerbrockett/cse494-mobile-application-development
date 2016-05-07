@@ -64,8 +64,7 @@
 		2F0969D51CCCBB2D00A4D9E8 = {
 			isa = PBXGroup;
 			children = (
-				2FBB82EE1CCE1FB1002AF907 /* AVFoundation.framework */,
-				2FBB82EF1CCE1FB1002AF907 /* AVKit.framework */,
+				2F9546561CD23306004618F0 /* frameworks */,
 				2F0969E01CCCBB2D00A4D9E8 /* ios-client */,
 				2F0969DF1CCCBB2D00A4D9E8 /* Products */,
 			);
@@ -99,6 +98,15 @@
 				2F0969EB1CCCBB2D00A4D9E8 /* Assets.xcassets */,
 			);
 			path = "ios-client";
+			sourceTree = "<group>";
+		};
+		2F9546561CD23306004618F0 /* frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FBB82EE1CCE1FB1002AF907 /* AVFoundation.framework */,
+				2FBB82EF1CCE1FB1002AF907 /* AVKit.framework */,
+			);
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 		2FBB82EB1CCD7B47002AF907 /* CoreData */ = {

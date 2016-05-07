@@ -1,9 +1,9 @@
 /*
  * @author              Tyler Brockett	mailto:tylerbrockett@gmail.com
  * @course              ASU CSE 494
- * @project             Lab 8
- * @version             April 5, 2016
- * @project-description Store data from http://www.omdbapi.com/ into Core Data.
+ * @project             Lab 9 - iOS
+ * @version             April 25, 2016
+ * @project-description Get movie data from two sources and play movie if file exists.
  * @class-name          TableViewController.swift
  * @class-description   Displays current contents of movies in Core Data to the user. Fetches the movies' poster images and displays them as well.
  *
