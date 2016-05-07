@@ -32,8 +32,6 @@
 
 package edu.asu.bscs.tkbrocke.android_client;
 
-import android.content.Context;
-import android.media.MediaMetadataRetriever;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
